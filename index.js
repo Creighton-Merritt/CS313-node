@@ -1,17 +1,13 @@
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
+const app = express();
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/math', calculatePrice)
-  //default to https://mysterious-meadow-58024.herokuapp.com/form.html?
-  .get('/', function(req, res){
-    res.sendfile('form.html', { root: __dirname + "https://mysterious-meadow-58024.herokuapp.com/form.html" } );
-    })
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+app.use(express.static(path.join(__dirname, 'public')))
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+app.get('/math', calculatePrice)
 
 
 function calculatePrice(req, res) {
@@ -22,3 +18,9 @@ function calculatePrice(req, res) {
     const params = {type: type, weight: weight, total: total};
     res.render('pages/results', params);
 }
+
+app.get('/', function(req, res) {
+    res.status(200).sendFile('form.html', (path.join(_dirname, '/public/')))
+});
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
