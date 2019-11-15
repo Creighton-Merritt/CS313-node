@@ -9,7 +9,7 @@ express()
   .get('/math', calculatePrice)
   //default to https://mysterious-meadow-58024.herokuapp.com/form.html?
   .get('/', function(req, res){
-    res.sendfile('form.html', { root: __dirname + "public/form.html" } );
+    res.sendfile('form.html', { root: __dirname + "https://mysterious-meadow-58024.herokuapp.com/form.html" } );
     })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
