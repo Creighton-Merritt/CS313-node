@@ -20,7 +20,8 @@ function calculatePrice(req, res) {
 }
 
 app.get('/', function(req, res) {
-    res.status(200).sendFile('form.html', (path.join(_dirname, '/public/')))
+    res.redirect('/form.html');
 });
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
