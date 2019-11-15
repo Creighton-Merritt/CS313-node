@@ -7,6 +7,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/math', calculatePrice)
+  //default to https://mysterious-meadow-58024.herokuapp.com/form.html?
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
