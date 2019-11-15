@@ -6,5 +6,15 @@ express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
- // .get('/', (req, res) => res.render('pages/form'))
+  .get('/math', calculatePrice)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+
+function calculatePrice(req, res) {
+    var type = req.query.mailType;
+    var weight = Number(req.query.weight);
+    var total = 10; // just for testing
+    //do calculations
+    const params = {type: type, weight: weight, total: total};
+    res.render('pages/results', params);
+}
