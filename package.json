@@ -1,0 +1,23 @@
+{
+  "name": "cs313-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Creighton-Merritt/CS313-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Creighton-Merritt/CS313-node/issues"
+  },
+  "homepage": "https://github.com/Creighton-Merritt/CS313-node#readme",
+  "dependencies": {
+    "ejs": "^2.7.2",
+    "express": "^4.17.1"
+  }
+}
