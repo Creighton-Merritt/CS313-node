@@ -10,8 +10,8 @@ app.set('view engine', 'ejs')
 app.get('/getRate', calculateRate)
 
 app.get('/', function(req, res) {
-    res.redirect('/form.html');
-})
+    res.render('pages/form');
+});
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
